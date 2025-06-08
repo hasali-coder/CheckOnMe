@@ -1,73 +1,117 @@
-# Welcome to your Lovable project
+# CheckOnMe
 
-## Project info
+**CheckOnMe** is an anonymous peer-to-peer mental health support platform designed specifically for men. It offers a safe digital space where users can connect without judgment, share thoughts, and find support — without revealing personal identities.
 
-**URL**: https://lovable.dev/projects/3f182294-65ea-4c4c-bc92-636ee5df3269
+> "Speak freely. Heal quietly."
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 🔷 Project Goals
 
-**Use Lovable**
+- Provide men with **anonymous support channels**
+- Enable **peer matching** based on shared struggles (e.g., fatherhood, anxiety, loneliness)
+- Reduce mental health stigma through **community reflections**
+- Use design language that is **modern, intuitive, and emotionally safe**
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/3f182294-65ea-4c4c-bc92-636ee5df3269) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🧠 Features
 
-**Use your preferred IDE**
+- **Anonymous Login** with auto-generated usernames (e.g., _MindfulOtter42_)
+- **Buddy Matching**: Pair users based on tags like work stress, grief, social anxiety
+- **Conversation Pods**: Join or browse small group discussions
+- **Public Reflections Feed**: Post short journal-style entries
+- **Real-Time Chat** (optional for MVP)
+- **Mood Check-In Tool** (optional future phase)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 🌐 Live Preview
 
-Follow these steps:
+ 
+👉 [CheckOnMe Preview](https://preview--mindful-bro-connect.lovable.app)
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+---
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 🧰 Tech Stack
 
-# Step 3: Install the necessary dependencies.
-npm i
+| Layer         | Tool/Platform     |
+|---------------|------------------|
+| Frontend      | React + Tailwind CSS (via Lovable AI) |
+| Authentication| Supabase Auth    |
+| Backend       | Supabase Edge Functions & Database |
+| Real-time     | Supabase Realtime Channels |
+| Deployment    | Vercel / Netlify (suggested) |
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+---
 
-**Edit a file directly in GitHub**
+## 🗃️ Database Schema (Core Tables)
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### `users`
+| Column        | Type     | Notes                  |
+|---------------|----------|------------------------|
+| id            | UUID     | Primary key            |
+| alias         | Text     | Anonymous name         |
+| tags          | Text[]   | Interest/struggle tags |
+| created_at    | Timestamp | Auto generated         |
 
-**Use GitHub Codespaces**
+### `matches`
+| Column        | Type     | Notes                  |
+|---------------|----------|------------------------|
+| id            | UUID     |                        |
+| user1_id      | UUID     | FK to users            |
+| user2_id      | UUID     | FK to users            |
+| created_at    | Timestamp |                        |
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### `reflections`
+| Column        | Type     | Notes                  |
+|---------------|----------|------------------------|
+| id            | UUID     |                        |
+| user_id       | UUID     | FK to users            |
+| content       | Text     | Short reflection       |
+| created_at    | Timestamp |                        |
 
-## What technologies are used for this project?
+---
 
-This project is built with:
+## 🖼️ UI Design System
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- **Primary Color:** Navy Blue `#0A1F44`
+- **Accent Color:** White `#FFFFFF`
+- **Typography:** Poppins / Inter / IBM Plex Sans
+- **Design Tokens:** Rounded corners, shadowed cards, clean spacing, large tap targets
+- **Mobile-First:** Designed from small screens up
 
-## How can I deploy this project?
+---
 
-Simply open [Lovable](https://lovable.dev/projects/3f182294-65ea-4c4c-bc92-636ee5df3269) and click on Share -> Publish.
+## 🛡️ Privacy & Safety
 
-## Can I connect a custom domain to my Lovable project?
+- End-to-end user anonymity
+- No real names, photos, or external identity linkage
+- Moderation-ready structure for abuse reporting
+- Optional escalation alerts for concerning messages (in roadmap)
 
-Yes, you can!
+---
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 🚧 Roadmap
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+- [ ] Add in-app mood tracker and journal
+- [ ] Support real-time chat via Supabase Realtime
+- [ ] Add dark mode toggle
+- [ ] Implement admin dashboard for volunteer moderators
+- [ ] SMS/email reminders for check-ins (Edge Functions)
+
+
+
+## 📄 License
+
+MIT License 
+
+---
+
+## 📬 Feedback & Support
+
+For questions, feedback, or contributions, please open an issue or submit a pull request.
+
+---
+
+> _Built to offer quiet strength and silent support — for the men who carry so much, so silently._
