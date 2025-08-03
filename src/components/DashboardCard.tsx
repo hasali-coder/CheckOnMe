@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { LucideIcon } from 'lucide-react';
 
@@ -7,30 +6,29 @@ interface DashboardCardProps {
   title: string;
   description: string;
   buttonText: string;
-  onClick?: () => void;
-  className?: string;
+  onClick: () => void;
 }
 
-const DashboardCard: React.FC<DashboardCardProps> = ({ 
-  icon: Icon, 
-  title, 
-  description, 
-  buttonText, 
-  onClick,
-  className = '' 
+const DashboardCard: React.FC<DashboardCardProps> = ({
+  icon: Icon,
+  title,
+  description,
+  buttonText,
+  onClick
 }) => {
   return (
-    <div className={`card-gentle cursor-pointer hover:border-primary/20 ${className}`} onClick={onClick}>
+    <div className="bg-white/5 text-white/90 rounded-2xl p-6 shadow hover:shadow-lg transition duration-300 ease-in-out">
       <div className="flex items-center gap-4 mb-4">
-        <div className="p-4 bg-muted rounded-2xl">
-          <Icon className="w-8 h-8 text-primary" />
+        <div className="p-3 bg-white/10 rounded-xl">
+          <Icon className="w-6 h-6 text-white/80" />
         </div>
-        <div className="flex-1">
-          <h3 className="text-xl font-semibold text-primary mb-1">{title}</h3>
-          <p className="text-muted-foreground text-sm">{description}</p>
-        </div>
+        <h3 className="text-lg font-semibold">{title}</h3>
       </div>
-      <button className="w-full btn-secondary text-sm py-3">
+      <p className="text-white/60 mb-6">{description}</p>
+      <button
+        onClick={onClick}
+        className="btn-secondary"
+      >
         {buttonText}
       </button>
     </div>

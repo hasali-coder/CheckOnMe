@@ -1,5 +1,5 @@
-
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 interface LogoProps {
   size?: 'sm' | 'md' | 'lg' | 'xl';
@@ -7,6 +7,8 @@ interface LogoProps {
 }
 
 const Logo: React.FC<LogoProps> = ({ size = 'md', className = '' }) => {
+  const navigate = useNavigate();
+
   const sizeClasses = {
     sm: 'text-2xl',
     md: 'text-4xl',
@@ -15,8 +17,15 @@ const Logo: React.FC<LogoProps> = ({ size = 'md', className = '' }) => {
   };
 
   return (
-    <div className={`wordmark ${sizeClasses[size]} text-primary ${className}`}>
-      Check<span className="text-muted-foreground">On</span>Me
+    <div
+      className={`cursor-pointer wordmark ${sizeClasses[size]} font-extrabold ${className}`}
+      onClick={() => navigate('/')}
+    >
+      Check
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-red-400">
+        On
+      </span>
+      Me
     </div>
   );
 };

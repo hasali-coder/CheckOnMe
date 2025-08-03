@@ -1,54 +1,51 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Design system for CheckOnMe - Mental Health Support Platform */
+/* Design System: CheckOnMe Dark Mode Friendly */
 
 @layer base {
   :root {
-    --background: 255 255 255; /* White */
-    --foreground: 10 31 68; /* Navy */
+    --background: 15 12 41;
+    --foreground: 255 255 255;
 
-    --card: 255 255 255; /* White */
-    --card-foreground: 10 31 68; /* Navy */
+    --card: 255 255 255;
+    --card-foreground: 10 31 68;
 
-    --popover: 255 255 255; /* White */
-    --popover-foreground: 10 31 68; /* Navy */
+    --popover: 255 255 255;
+    --popover-foreground: 10 31 68;
 
-    --primary: 10 31 68; /* Navy Blue #0A1F44 */
-    --primary-foreground: 255 255 255; /* White */
+    --primary: 232 232 255;
+    --primary-foreground: 15 12 41;
 
-    --secondary: 248 250 252; /* Very light gray for subtle backgrounds */
-    --secondary-foreground: 10 31 68; /* Navy */
+    --secondary: 48 43 99;
+    --secondary-foreground: 255 255 255;
 
-    --muted: 232 240 255; /* Calm light blue */
-    --muted-foreground: 107 140 174; /* Calm blue */
+    --muted: 255 255 255;
+    --muted-foreground: 189 195 199;
 
-    --accent: 232 240 255; /* Calm light blue */
-    --accent-foreground: 10 31 68; /* Navy */
+    --accent: 255 255 255;
+    --accent-foreground: 10 31 68;
 
     --destructive: 239 68 68;
     --destructive-foreground: 255 255 255;
 
-    --border: 226 232 240; /* Light border */
-    --input: 226 232 240; /* Light input border */
-    --ring: 10 31 68; /* Navy focus ring */
+    --border: 255 255 255;
+    --input: 226 232 240;
+    --ring: 148 92 254;
 
-    --radius: 0.75rem; /* Slightly more rounded */
+    --radius: 0.75rem;
 
-    --sidebar-background: 255 255 255;
-    --sidebar-foreground: 10 31 68;
-    --sidebar-primary: 10 31 68;
-    --sidebar-primary-foreground: 255 255 255;
-    --sidebar-accent: 248 250 252;
-    --sidebar-accent-foreground: 10 31 68;
-    --sidebar-border: 226 232 240;
-    --sidebar-ring: 10 31 68;
+    --sidebar-background: 15 12 41;
+    --sidebar-foreground: 255 255 255;
+    --sidebar-primary: 232 232 255;
+    --sidebar-primary-foreground: 15 12 41;
+    --sidebar-accent: 148 92 254;
+    --sidebar-accent-foreground: 255 255 255;
+    --sidebar-border: 255 255 255;
+    --sidebar-ring: 148 92 254;
   }
-}
 
-@layer base {
   * {
     @apply border-border;
   }
@@ -64,18 +61,22 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-8 py-4 font-medium transition-all duration-300 ease-in-out transform hover:scale-105 shadow-lg hover:shadow-xl;
+    @apply bg-pink-600 text-white rounded-full px-6 py-3 font-medium transition-all duration-300 ease-in-out hover:bg-pink-700 shadow hover:shadow-xl;
   }
-  
+
   .btn-secondary {
-    @apply bg-transparent text-primary border-2 border-primary hover:bg-primary hover:text-primary-foreground rounded-full px-8 py-4 font-medium transition-all duration-300 ease-in-out transform hover:scale-105;
+    @apply border border-white text-white px-6 py-3 rounded-full font-medium transition-all duration-300 hover:bg-white hover:text-black;
   }
 
   .card-gentle {
-    @apply bg-card border border-border rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 ease-in-out;
+    @apply bg-white/5 text-white/90 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300;
+  }
+
+  .card-dark {
+    @apply bg-white/5 text-white/80 rounded-2xl p-6 shadow hover:shadow-lg transition-all duration-300;
   }
 
   .safe-gradient {
-    background: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
+    background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
   }
 }
