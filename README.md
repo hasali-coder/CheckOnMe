@@ -6,7 +6,7 @@
 
 ---
 
-## 🔷 Project Goals
+## Project Goals
 
 - Provide men with **anonymous support channels**
 - Enable **peer matching** based on shared struggles (e.g., fatherhood, anxiety, loneliness)
@@ -15,7 +15,7 @@
 
 ---
 
-## 🧠 Features
+## Features
 
 - **Anonymous Login** with auto-generated usernames (e.g., _MindfulOtter42_)
 - **Buddy Matching**: Pair users based on tags like work stress, grief, social anxiety
@@ -26,14 +26,14 @@
 
 ---
 
-## 🌐 Live Preview
+## Live Preview
 
  
-👉 [CheckOnMe Preview](https://preview--mindful-bro-connect.lovable.app)
+👉 [CheckOnMe Preview](https://check-on-me.vercel.app)
 
 ---
 
-## 🧰 Tech Stack
+## Tech Stack
 
 | Layer         | Tool/Platform     |
 |---------------|------------------|
@@ -45,7 +45,7 @@
 
 ---
 
-## 🗃️ Database Schema (Core Tables)
+## Database Schema (Core Tables)
 
 ### `users`
 | Column        | Type     | Notes                  |
@@ -73,7 +73,7 @@
 
 ---
 
-## 🖼️ UI Design System
+## UI Design System
 
 - **Primary Color:** Navy Blue `#0A1F44`
 - **Accent Color:** White `#FFFFFF`
@@ -83,7 +83,7 @@
 
 ---
 
-## 🛡️ Privacy & Safety
+## Privacy & Safety
 
 - End-to-end user anonymity
 - No real names, photos, or external identity linkage
@@ -92,7 +92,7 @@
 
 ---
 
-## 🚧 Roadmap
+## Roadmap
 
 - [ ] Add in-app mood tracker and journal
 - [ ] Support real-time chat via Supabase Realtime
@@ -102,13 +102,12 @@
 
 
 
-## 📄 License
+## License
 
 MIT License 
 
 ---
-
-## 📬 Feedback & Support
+## Feedback & Support
 
 For questions, feedback, or contributions, please open an issue or submit a pull request.
 
