@@ -5,6 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  base: '/', // ✅ This line fixes blank screen on Vercel
   server: {
     host: "::",
     port: 8080,
